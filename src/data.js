@@ -1,10 +1,10 @@
 const customData = {
   "bonuses": [{
-    "title": "Nethouse.ru",
-    "description": "Конструктор сайтов",
-    "link": "https://nethouse.ru/?p=travelpayouts",
-    "promocode": "travelpayouts1"
-  },
+      "title": "Nethouse.ru",
+      "description": "Конструктор сайтов",
+      "link": "https://nethouse.ru/?p=travelpayouts",
+      "promocode": "travelpayouts1"
+    },
     {
       "title": "Appfollow.io",
       "description": "SDK",
