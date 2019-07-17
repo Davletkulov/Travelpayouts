@@ -1,26 +1,41 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Menu from "./Components/Menu/Menu";
+import Header from "./Components/Header/Header";
+import Filter from "./Components/Filter/Filter";
+import Card from "./Components/Card/Card";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  class App extends Component {
+    constructor() {
+      super()
+      this.state = {
+        speed: ''
+      }
+    }
+
+    onChangeSpeedInKph = (e) => {
+      console.log(1)
+      this.setState({
+        speed: e
+      })
+    }
+  render() {
+    return (
+      <div className="page_wrapper">
+        <Menu/>
+        <div className='Content'>
+          <Header/>
+          <div className='Content-page'>
+            <Filter speed={this.state.speed} onChangeSpeed={this.onChangeSpeedInKph}/>
+            <Card/>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
 }
 
 export default App;
