@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import './Filter.scss'
+import Button from "../Button/Button";
 
 class  Filter extends Component{
   constructor(props) {
@@ -11,11 +13,11 @@ class  Filter extends Component{
   render() {
     const {speed} = this.props
     return (
-      <div>
+      <div className='Filter'>
         <h1>Сервисы</h1>
         <div>
-          <input value={speed} onChange={this.onChangeSpeed}/>
-          <button>СБРОСИТЬ</button>
+          <input value={speed} onChange={this.onChangeSpeed} className='Filter-input'/>
+          <Button text='СБРОСИТЬ' whiteButton='Button-white'/>
         </div>
       </div>
     )
