@@ -10,6 +10,7 @@ class  Filter extends Component{
   onChangeSpeed = (e) => {
     this.props.onChangeSpeed(e.target.value)
   }
+
   render() {
     const {speed} = this.props
     return (
@@ -17,7 +18,7 @@ class  Filter extends Component{
         <h1>Сервисы</h1>
         <div>
           <input value={speed} onChange={this.onChangeSpeed} className='Filter-input'/>
-          <Button text='СБРОСИТЬ' whiteButton='Button-white'/>
+          <Button  onDeleteValue={this.props.onDeleteValue}  text='СБРОСИТЬ' whiteButton='Button-white'/>
         </div>
       </div>
     )

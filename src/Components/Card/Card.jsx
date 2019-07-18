@@ -4,30 +4,34 @@ import './Card.scss'
 
 class  Card extends Component {
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor() {
-    super();
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      refInput: null,
+    }
   }
 
   CopyText = (e) => {
     console.log(e.target.id)
-    // console.log(this.myInput)
-   
-    // this.myInput.current.select();
-    // document.execCommand("copy");
-    // alert("Copied the text: " + this.myInput.current.value);
+  console.log(this.state.refInput)
+
+    this.state.refInput.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + this.state.refInput.value);
     
   }
 
   myInput = (ref) => {
+    this.state.refInput =ref;
     return console.log(ref.id)
   }
 
   render() {
-    const str = ''
+    const str = this.props.speed;
     const title = customData.bonuses.map((item, index) => {
       if (str) {
-        if (str === item.title ) {
+        if ( !item.title.indexOf(str) ) {
           return (
             <div className='Card' key={index}>
               <div className='Card-title'>
@@ -55,10 +59,10 @@ class  Card extends Component {
             </div>
             <div className='Card-promocode'>
               <div className='Card-promocode__title'>ПРОМОКОД</div>
-              <div className='Card-promocode__text' onClick={this.CopyText}>
+              <div className='Card-promocode__text'>
   
                 <input type="text" value={item.promocode} id={index}  disabled ref={this.myInput}/>
-                <button id={index} className='Card-promocode__copy'></button>
+                <button id={index} className='Card-promocode__copy'  onClick={this.CopyText}></button>
               </div>
             </div>
             <button className='Card-button'>ПОЛУЧИТЬ БОНУС</button>
