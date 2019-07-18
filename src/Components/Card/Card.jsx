@@ -22,10 +22,10 @@ class  Card extends Component {
     
   }
 
-  myInput = (ref) => {
-    this.state.refInput =ref;
-    return console.log(ref.id)
-  }
+  // myInput = (ref) => {
+  //   this.state.refInput =ref;
+  //   return console.log(ref.id)
+  // }
 
   render() {
     const str = this.props.speed;

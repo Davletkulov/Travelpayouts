@@ -3,36 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 import Menu from "./Components/Menu/Menu";
 import Header from "./Components/Header/Header";
-import Filter from "./Components/Filter/Filter";
-import Card from "./Components/Card/Card";
+import { Switch, Route } from 'react-router-dom'
+import Travelpayouts from "./Components/Travelpayouts/Travelpayouts";
+import ToDoList from "./Components/ToDoList/ToDoList";
+
+// const Main = () => (
+//   <main>
+
+//   </main>
+// )
 
 
   class App extends Component {
 
     constructor() {
       super()
-      this.state = {
-        speed: '',
-        // value: ''
-      }
     }
-
-
-    onChangeSpeedInKph = (e) => {
-
-
-      this.setState({
-        speed: e
-      })
-    }
-
-    onDeleteValue = () => {
-      console.log(1)
-      this.setState({
-        speed: ''
-      })
-    }
-  render() {
+    render() {
 
     return (
       <div className="page_wrapper">
@@ -42,8 +29,10 @@ import Card from "./Components/Card/Card";
         <div className='Content'>
           <Header/>
           <div className='Content-page'>
-            <Filter speed={this.state.speed} onChangeSpeed={this.onChangeSpeedInKph} onDeleteValue={this.onDeleteValue}/>
-            <Card speed={this.state.speed} />
+                <Switch>
+                  <Route exact path='/' component={Travelpayouts}/>
+                  <Route exact path='/todo' render={(props) => (<ToDoList {...props}/>)}/>
+                </Switch>
           </div>
         </div>
       </div>
