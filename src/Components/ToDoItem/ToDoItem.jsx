@@ -10,8 +10,11 @@ function TodoItem(props) {
   }
   return (
     <div className="todo-item">
-      <input type="checkbox" checked={props.item.completed} onChange={() => props.onChangeCompleted(props.item.id)}/>
-      <p style={ props.item.completed ? completedStyle : null}>{props.item.text}</p>
+      <label className="todo-item-сheckbox">
+        <input type="checkbox" checked={props.item.completed} onChange={() => props.onChangeCompleted(props.index)}/>
+        <p style={ props.item.completed ? completedStyle : null}>{props.item.text}</p>
+      </label>
+      <button onClick={() => props.onDeleteItem(props.index)}>УДАЛИТЬ</button>
     </div>
   )
 }

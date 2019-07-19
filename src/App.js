@@ -5,6 +5,7 @@ import Menu from "./Components/Menu/Menu";
 import Header from "./Components/Header/Header";
 import { Switch, Route } from 'react-router-dom'
 import Travelpayouts from "./Components/Travelpayouts/Travelpayouts";
+import Fetch from "./Components/Fetch/Fetch";
 import ToDoList from "./Components/ToDoList/ToDoList";
 
 // const Main = () => (
@@ -31,6 +32,7 @@ import ToDoList from "./Components/ToDoList/ToDoList";
           <div className='Content-page'>
                 <Switch>
                   <Route exact path='/' component={Travelpayouts}/>
+                  <Route exact path='/fetch' component={Fetch}/>
                   <Route exact path='/todo' render={(props) => (<ToDoList {...props}/>)}/>
                 </Switch>
           </div>

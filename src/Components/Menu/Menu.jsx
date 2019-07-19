@@ -11,6 +11,7 @@ function Menu() {
         <ul>
           <li><NavLink  to='/' ><div></div></NavLink></li>
           <li><NavLink to='/todo' ><div></div></NavLink></li>
+          <li><NavLink to='/fetch' ><div></div></NavLink></li>
         </ul>
       </nav>
 
