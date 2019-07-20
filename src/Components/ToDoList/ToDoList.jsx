@@ -29,26 +29,16 @@ class ToDoList extends Component {
   }
 
   onDeleteItem = (id) => {
-    // console.log(id)
-    // const index = id
-    this.setState(prevState => {
-      // let updateTodos = prevState.todos.map((todo, index) => {
-      //   if (index === id) {
-      //     // updateTodos.splice(3, 1)
-      //   }
-      //   console.log(updateTodos)
-      //   return todo
-      // })
-
-      return {
-        todos: todosData.splice(id, 1)
-      }
+    const todos = this.state.todos;
+    todos.splice(id, 1)
+    this.setState( {
+      todos
     })
   }
 
 
   render() {
-    const TodoItems = todosData.map((item, index) => {
+    const TodoItems = this.state.todos.map((item, index) => {
       return <TodoItem key={index} index={index} item={item}  onChangeCompleted={this.onChangeCompleted} onDeleteItem={this.onDeleteItem}/>
     })
     return (
