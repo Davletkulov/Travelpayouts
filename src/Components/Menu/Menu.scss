@@ -23,7 +23,7 @@ li {
 
 
 
-  div {
+  .a {
     width: 24px;
     height: 24px;
     border: 3px solid #888991;
@@ -33,6 +33,14 @@ li {
 
 }
 
-.active {
-  border: 3px solid #FFFFFF;
+// .active {
+//   border: 3px solid #FFFFFF;
+// }
+
+.selected {
+  .a {
+   
+    border: 3px solid red;
+   
+  }
 }

@@ -9,9 +9,9 @@ function Menu() {
     <div className='Menu'>
       <nav>
         <ul>
-          <li><NavLink  to='/' ><div></div></NavLink></li>
-          <li><NavLink to='/todo' ><div></div></NavLink></li>
-          <li><NavLink to='/fetch' ><div></div></NavLink></li>
+          <li><NavLink exact to='/' activeClassName="selected"><div className="a"></div></NavLink></li>
+          <li><NavLink to='/todo' activeClassName="selected"><div className="a"></div></NavLink></li>
+          <li><NavLink to='/fetch' activeClassName="selected"><div className="a"></div></NavLink></li>
         </ul>
       </nav>
 
